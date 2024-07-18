@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Print Orders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .product-images img {
+            width: 150px;
+            margin: 10px;
+        }
+        .form-section {
+            margin-top: 20px;
+        }
+        .form-section input, .form-section textarea {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Order Your 3D Prints</h1>
+        <div class="product-images">
+            <img src="path_to_image1.png" alt="Product 1">
+            <img src="path_to_image2.png" alt="Product 2">
+        </div>
+        <p>Select the size for each product:</p>
+        <ul>
+            <li>Small (4")</li>
+            <li>Medium (6")</li>
+            <li>Large (12")</li>
+            <li>Custom</li>
+        </ul>
+    </header>
+    <section class="form-section">
+        <form id="orderForm" action="YOUR_WEB_APP_URL_HERE" method="POST">
+            <h2>Order Form</h2>
+            <label><input type="checkbox" name="product1_4"> Product 1 (4")</label>
+            <label><input type="checkbox" name="product1_6"> Product 1 (6")</label>
+            <label><input type="checkbox" name="product1_12"> Product 1 (12")</label>
+            <label><input type="checkbox" name="product1_custom"> Product 1 (Custom)</label>
+            <textarea name="product1_custom_size" placeholder="Enter custom size for Product 1"></textarea>
+
+            <label><input type="checkbox" name="product2_4"> Product 2 (4")</label>
+            <label><input type="checkbox" name="product2_6"> Product 2 (6")</label>
+            <label><input type="checkbox" name="product2_12"> Product 2 (12")</label>
+            <label><input type="checkbox" name="product2_custom"> Product 2 (Custom)</label>
+            <textarea name="product2_custom_size" placeholder="Enter custom size for Product 2"></textarea>
+
+            <h2>Contact Information</h2>
+            <input type="email" name="email" placeholder="Email (required)" required>
+            <input type="text" name="first_name" placeholder="First Name">
+            <input type="text" name="address" placeholder="Mailing Address (Street, City, State, Zipcode, Country)">
+            <input type="text" name="phone_number" placeholder="Phone Number">
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert("Thank you for your order! Let's Make This Country Great Again!");
+            // Function to log submissions to a Google Sheet would go here.
+        });
+    </script>
+</body>
+</html>
